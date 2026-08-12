@@ -1,0 +1,580 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <title>Certifications | Portfolio</title>
+
+    <link rel="stylesheet" href="assets/css/main.css">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        /* BODY */
+
+        body {
+            font-family: Arial, sans-serif;
+
+            background: linear-gradient(
+                135deg,
+                #0f172a,
+                #1e293b,
+                #312e81
+            );
+
+            color: white;
+
+            min-height: 100vh;
+        }
+
+
+        /* SECTION */
+
+        #certifications {
+            padding: 80px 20px;
+        }
+
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+        }
+
+
+        /* HEADING */
+
+        .section-heading {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+
+        .section-heading h1 {
+
+            font-size: 45px;
+
+            margin-bottom: 12px;
+
+            background: linear-gradient(
+                90deg,
+                #38bdf8,
+                #a78bfa
+            );
+
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+
+        .section-heading p {
+
+            color: #cbd5e1;
+
+            font-size: 18px;
+        }
+
+
+        /* CERTIFICATION GRID */
+
+        .certification-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(auto-fit, minmax(300px, 1fr));
+
+            gap: 30px;
+        }
+
+
+        /* CERTIFICATE CARD */
+
+        .certificate-card {
+
+            background: rgba(
+                255,
+                255,
+                255,
+                0.08
+            );
+
+            border: 1px solid
+                rgba(255, 255, 255, 0.15);
+
+            border-radius: 20px;
+
+            padding: 20px;
+
+            backdrop-filter: blur(12px);
+
+            box-shadow:
+                0 15px 35px
+                rgba(0, 0, 0, 0.3);
+
+            transition:
+                transform 0.4s ease,
+                box-shadow 0.4s ease,
+                border-color 0.4s ease;
+
+            overflow: hidden;
+        }
+
+
+        /* HOVER */
+
+        .certificate-card:hover {
+
+            transform: translateY(-10px);
+
+            border-color: #38bdf8;
+
+            box-shadow:
+                0 25px 50px
+                rgba(0, 0, 0, 0.45);
+        }
+
+
+        /* IMAGE CONTAINER */
+
+        .certificate-image {
+
+            width: 100%;
+
+            height: 260px;
+
+            background: white;
+
+            border-radius: 15px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            overflow: hidden;
+
+            margin-bottom: 20px;
+        }
+
+
+        /* IMAGE */
+
+        .certificate-image img {
+
+            width: 100%;
+
+            height: 100%;
+
+            object-fit: contain;
+
+            display: block;
+
+            transition:
+                transform 0.4s ease;
+        }
+
+
+        .certificate-card:hover
+        .certificate-image img {
+
+            transform: scale(1.03);
+        }
+
+
+        /* BADGE */
+
+        .certificate-badge {
+
+            display: inline-block;
+
+            padding: 7px 14px;
+
+            border-radius: 20px;
+
+            background: linear-gradient(
+                90deg,
+                #2563eb,
+                #7c3aed
+            );
+
+            color: white;
+
+            font-size: 12px;
+
+            font-weight: bold;
+
+            margin-bottom: 12px;
+        }
+
+
+        /* TITLE */
+
+        .certificate-card h2 {
+
+            font-size: 20px;
+
+            line-height: 1.4;
+
+            color: white;
+
+            margin-bottom: 10px;
+        }
+
+
+        /* DESCRIPTION */
+
+        .certificate-card p {
+
+            color: #cbd5e1;
+
+            font-size: 14px;
+
+            line-height: 1.6;
+        }
+
+
+        /* VIEW BUTTON */
+
+        .view-btn {
+
+            display: inline-block;
+
+            margin-top: 18px;
+
+            padding: 9px 18px;
+
+            border-radius: 25px;
+
+            background: #0ea5e9;
+
+            color: white;
+
+            text-decoration: none;
+
+            font-size: 14px;
+
+            transition: 0.3s;
+        }
+
+
+        .view-btn:hover {
+
+            background: #7c3aed;
+
+            transform: scale(1.05);
+        }
+
+
+        /* MOBILE */
+
+        @media (max-width: 600px) {
+
+            #certifications {
+
+                padding: 50px 15px;
+            }
+
+
+            .section-heading h1 {
+
+                font-size: 34px;
+            }
+
+
+            .section-heading p {
+
+                font-size: 15px;
+            }
+
+
+            .certificate-image {
+
+                height: 230px;
+            }
+
+
+            .certificate-card {
+
+                padding: 15px;
+            }
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- CERTIFICATIONS SECTION -->
+
+<section id="certifications">
+
+    <div class="container">
+
+
+        <!-- HEADING -->
+
+        <div class="section-heading">
+
+            <h1>Certifications & Workshops</h1>
+
+            <p>
+                Certifications and learning experiences
+                that strengthened my technical skills.
+            </p>
+
+        </div>
+
+
+        <!-- CERTIFICATION GRID -->
+
+        <div class="certification-grid">
+
+
+            <!-- MICROSOFT -->
+
+            <div class="certificate-card">
+
+                <div class="certificate-image">
+
+                    <img
+                        src="C:/Users/savvu/OneDrive/Desktop/portfolio website/images/certificates/microsoft.jpeg"
+                        alt="Microsoft Generative AI and Agents Certificate">
+
+                </div>
+
+
+                <span class="certificate-badge">
+                    Microsoft
+                </span>
+
+
+                <h2>
+                    Introduction to Generative AI
+                    and Agents
+                </h2>
+
+
+                <p>
+                    Completed the Introduction to
+                    Generative AI and Agents certification
+                    offered by Microsoft.
+                </p>
+
+
+                <a
+                    href="C:/Users/savvu/OneDrive/Desktop/portfolio website/images/certificates/microsoft.jpeg"
+                    target="_blank"
+                    class="view-btn">
+
+                    View Certificate →
+
+                </a>
+
+            </div>
+
+
+
+            <!-- IBM -->
+
+            <div class="certificate-card">
+
+                <div class="certificate-image">
+
+                    <img
+                        src="C:/Users/savvu/OneDrive/Desktop/portfolio website/images/certificates/ibm prompt enginnering.jpeg"
+                        alt="IBM Prompt Engineering Certificate">
+
+                </div>
+
+
+                <span class="certificate-badge">
+                    IBM Cognitive Class
+                </span>
+
+
+                <h2>
+                    Prompt Engineering for Everyone
+                </h2>
+
+
+                <p>
+                    Completed the Prompt Engineering
+                    for Everyone course supported by
+                    IBM Cognitive Class.
+                </p>
+
+
+                <a
+                    href="C:/Users/savvu/OneDrive/Desktop/portfolio website/images/certificates/ibm prompt enginnering.jpeg"
+                    target="_blank"
+                    class="view-btn">
+
+                    View Certificate →
+
+                </a>
+
+            </div>
+
+
+
+            <!-- DATABRICKS -->
+
+            <div class="certificate-card">
+
+                <div class="certificate-image">
+
+                    <img
+                        src="C:/Users/savvu/OneDrive/Desktop/portfolio website/images/certificates/microsoft.jpeg"
+                        alt="Databricks Generative AI Certificate">
+
+                </div>
+
+
+                <span class="certificate-badge">
+                    Databricks
+                </span>
+
+
+                <h2>
+                    Fundamentals of Generative AI
+                </h2>
+
+
+                <p>
+                    Completed training focused on the
+                    fundamentals and applications of
+                    Generative AI through Databricks.
+                </p>
+
+
+                <a
+                    href="C:/Users/savvu/OneDrive/Desktop/portfolio website/images/certificates/microsoft.jpeg"
+                    target="_blank"
+                    class="view-btn">
+
+                    View Certificate →
+
+                </a>
+
+            </div>
+
+
+
+            <!-- KAGGLE -->
+
+            <div class="certificate-card">
+
+                <div class="certificate-image">
+
+                    <img
+                        src="C:/Users/savvu/OneDrive/Desktop/portfolio website/images/certificates/kaggle.jpeg"
+                        alt="Kaggle Machine Learning Certificate">
+
+                </div>
+
+
+                <span class="certificate-badge">
+                    Kaggle
+                </span>
+
+
+                <h2>
+                    Introduction to Machine Learning
+                </h2>
+
+
+                <p>
+                    Completed the Introduction to
+                    Machine Learning course through
+                    Kaggle.
+                </p>
+
+
+                <a
+                    href="C:/Users/savvu/OneDrive/Desktop/portfolio website/images/certificates/kaggle.jpeg"
+                    target="_blank"
+                    class="view-btn">
+
+                    View Certificate →
+
+                </a>
+
+            </div>
+
+
+
+            <!-- WORKSHOP -->
+
+            <div class="certificate-card">
+
+                <div class="certificate-image">
+
+                    <div style="
+                        color:#64748b;
+                        text-align:center;
+                        padding:30px;
+                        font-size:50px;
+                    ">
+                        🏫
+                    </div>
+
+                </div>
+
+
+                <span class="certificate-badge">
+                    Workshop
+                </span>
+
+
+                <h2>
+                    National Level Workshop
+                    on Generative AI & Data Science
+                </h2>
+
+
+                <p>
+                    Participated in a National Level
+                    Workshop conducted at JNTU College
+                    of Engineering, Manthani, focusing
+                    on Generative AI and Data Science.
+                </p>
+
+
+                <a
+                    href="#"
+                    class="view-btn">
+
+                    View Workshop →
+
+                </a>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+</body>
+
+</html>
+```

@@ -1,0 +1,627 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+
+    <title>Courses & Training | Sravya Kante</title>
+
+    <meta charset="utf-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="main.css">
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+
+            margin: 0;
+
+            font-family: Arial, sans-serif;
+
+            color: white;
+
+            background:
+                radial-gradient(
+                    circle at top right,
+                    #302060,
+                    transparent 35%
+                ),
+
+                radial-gradient(
+                    circle at bottom left,
+                    #172554,
+                    transparent 30%
+                ),
+
+                #080814;
+
+            min-height: 100vh;
+
+        }
+
+
+        /* Main section */
+
+        #courses {
+
+            padding: 70px 20px;
+
+        }
+
+
+        .container {
+
+            max-width: 1100px;
+
+            margin: auto;
+
+        }
+
+
+        /* Heading */
+
+        .heading {
+
+            text-align: center;
+
+            margin-bottom: 50px;
+
+        }
+
+
+        .heading span {
+
+            display: inline-block;
+
+            padding: 7px 15px;
+
+            border-radius: 20px;
+
+            background: rgba(139,92,246,0.12);
+
+            border: 1px solid rgba(167,139,250,0.3);
+
+            color: #b9a4ff;
+
+            font-size: 13px;
+
+            letter-spacing: 1px;
+
+            margin-bottom: 15px;
+
+        }
+
+
+        .heading h1 {
+
+            font-size: 42px;
+
+            margin: 0 0 12px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #a78bfa,
+                    #f472b6,
+                    #60a5fa
+                );
+
+            -webkit-background-clip: text;
+
+            -webkit-text-fill-color: transparent;
+
+        }
+
+
+        .heading p {
+
+            color: #aaa7bb;
+
+            font-size: 16px;
+
+        }
+
+
+        /* Cards */
+
+        .course-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 30px;
+
+        }
+
+
+        .course-card {
+
+            position: relative;
+
+            padding: 30px;
+
+            border-radius: 22px;
+
+            background:
+                rgba(255,255,255,0.055);
+
+            border:
+                1px solid rgba(255,255,255,0.1);
+
+            backdrop-filter: blur(15px);
+
+            box-shadow:
+                0 20px 45px rgba(0,0,0,0.3);
+
+            transition:
+                transform 0.4s ease,
+                border-color 0.4s ease,
+                box-shadow 0.4s ease;
+
+        }
+
+
+        .course-card:hover {
+
+            transform: translateY(-10px);
+
+            border-color:
+                rgba(167,139,250,0.55);
+
+            box-shadow:
+                0 25px 55px
+                rgba(124,92,255,0.18);
+
+        }
+
+
+        /* Number */
+
+        .course-number {
+
+            position: absolute;
+
+            top: 20px;
+
+            right: 25px;
+
+            font-size: 45px;
+
+            font-weight: bold;
+
+            color:
+                rgba(167,139,250,0.1);
+
+        }
+
+
+        /* Icon */
+
+        .course-icon {
+
+            width: 55px;
+
+            height: 55px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            border-radius: 15px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #7c5cff,
+                    #ec4899
+                );
+
+            font-size: 25px;
+
+            margin-bottom: 20px;
+
+        }
+
+
+        .course-card h2 {
+
+            color: white;
+
+            font-size: 23px;
+
+            margin-bottom: 12px;
+
+        }
+
+
+        .course-card p {
+
+            color: #aaa7bb;
+
+            line-height: 1.8;
+
+            font-size: 14px;
+
+        }
+
+
+        /* Tags */
+
+        .tags {
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 8px;
+
+            margin-top: 20px;
+
+        }
+
+
+        .tag {
+
+            padding: 7px 11px;
+
+            border-radius: 20px;
+
+            background:
+                rgba(124,92,255,0.12);
+
+            border:
+                1px solid
+                rgba(167,139,250,0.2);
+
+            color: #c4b5fd;
+
+            font-size: 11px;
+
+        }
+
+
+        /* Project highlight */
+
+        .project-box {
+
+            margin-top: 22px;
+
+            padding: 17px;
+
+            border-radius: 15px;
+
+            background:
+                rgba(34,197,94,0.06);
+
+            border:
+                1px solid
+                rgba(34,197,94,0.18);
+
+        }
+
+
+        .project-box strong {
+
+            color: #86efac;
+
+        }
+
+
+        .project-box p {
+
+            margin: 8px 0 0;
+
+            font-size: 13px;
+
+        }
+
+
+        /* Back button */
+
+        .back {
+
+            text-align: center;
+
+            margin-top: 45px;
+
+        }
+
+
+        .back a {
+
+            display: inline-block;
+
+            padding: 11px 22px;
+
+            border-radius: 25px;
+
+            text-decoration: none;
+
+            color: white;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #7c5cff,
+                    #b44cff
+                );
+
+            transition: 0.3s;
+
+        }
+
+
+        .back a:hover {
+
+            transform: translateY(-3px);
+
+            box-shadow:
+                0 10px 25px
+                rgba(124,92,255,0.3);
+
+        }
+
+
+        /* Mobile */
+
+        @media(max-width: 750px) {
+
+            .course-grid {
+
+                grid-template-columns: 1fr;
+
+            }
+
+
+            .heading h1 {
+
+                font-size: 32px;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<section id="courses">
+
+    <div class="container">
+
+
+        <!-- Heading -->
+
+        <div class="heading">
+
+            <span>LEARNING & DEVELOPMENT</span>
+
+            <h1>Courses & Training</h1>
+
+            <p>
+                Hands-on learning experiences that helped me
+                develop practical technical skills.
+            </p>
+
+        </div>
+
+
+        <div class="course-grid">
+
+
+            <!-- =================================
+                 EDUNET FOUNDATION
+            ================================== -->
+
+            <div class="course-card">
+
+                <div class="course-number">
+                    01
+                </div>
+
+
+                <div class="course-icon">
+                    🤖
+                </div>
+
+
+                <h2>
+                    Edunet Foundation
+                    AI & Technology Training
+                </h2>
+
+
+                <p>
+
+                    Successfully completed hands-on training in
+                    <strong>Artificial Intelligence & Machine Learning,
+                    Deep Learning, Edge Computing, SAP Analytics Cloud,
+                    and ABAP on BTP</strong> through Edunet Foundation.
+
+                </p>
+
+
+                <p>
+
+                    The program helped strengthen my
+                    <strong>problem-solving, analytical thinking,
+                    technical skills</strong> and ability to apply
+                    engineering concepts to real-world problems.
+
+                </p>
+
+
+                <div class="tags">
+
+                    <span class="tag">
+                        AI & ML
+                    </span>
+
+                    <span class="tag">
+                        Deep Learning
+                    </span>
+
+                    <span class="tag">
+                        Edge Computing
+                    </span>
+
+                    <span class="tag">
+                        SAP Analytics Cloud
+                    </span>
+
+                    <span class="tag">
+                        ABAP on BTP
+                    </span>
+
+                </div>
+
+
+                <!-- Project -->
+
+                <div class="project-box">
+
+                    <strong>
+                        🌳 Project: Smart Deforestation
+                        Management System
+                    </strong>
+
+                    <p>
+
+                        Applied Machine Learning techniques to
+                        support forest monitoring, detect potential
+                        intrusions and identify security threats
+                        in forest areas.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================
+                 DATA SCIENCE WORKSHOP
+            ================================== -->
+
+            <div class="course-card">
+
+                <div class="course-number">
+                    02
+                </div>
+
+
+                <div class="course-icon">
+                    🧠
+                </div>
+
+
+                <h2>
+                    Data Science & AI Workshop
+                </h2>
+
+
+                <p>
+
+                    Participated in a hands-on workshop covering
+                    the fundamentals of
+                    <strong>Data Science, Natural Language Processing
+                    (NLP), Prompt Engineering, Generative AI and
+                    modern AI tools.</strong>
+
+                </p>
+
+
+                <p>
+
+                    Gained practical exposure to applying AI concepts
+                    through real-time projects and learned how to
+                    design effective prompts, work with text data
+                    and build basic intelligent applications.
+
+                </p>
+
+
+                <div class="tags">
+
+                    <span class="tag">
+                        Data Science
+                    </span>
+
+                    <span class="tag">
+                        NLP
+                    </span>
+
+                    <span class="tag">
+                        Prompt Engineering
+                    </span>
+
+                    <span class="tag">
+                        Generative AI
+                    </span>
+
+                    <span class="tag">
+                        AI Tools
+                    </span>
+
+                </div>
+
+
+                <!-- Workshop Projects -->
+
+                <div class="project-box">
+
+                    <strong>
+                        💬 Practical Project Experience
+                    </strong>
+
+                    <p>
+
+                        Built real-time applications such as
+                        <strong>chatbots and AI-powered solutions</strong>
+                        while learning how AI concepts can be applied
+                        to practical problems.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+        <!-- Back -->
+
+        <div class="back">
+
+            <a href="../index.html">
+                ← Back to Portfolio
+            </a>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+</body>
+
+</html>

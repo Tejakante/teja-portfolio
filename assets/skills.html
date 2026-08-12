@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <link rel="stylesheet" href="assets/css/main.css">
+
+    <title>Skills | Portfolio</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f3ff;
+            color: #25223a;
+            overflow-x: hidden;
+        }
+
+        /* ================= SECTION ================= */
+
+        #skills {
+            position: relative;
+            padding: 90px 20px;
+            overflow: hidden;
+        }
+
+        .container {
+            max-width: 1050px;
+            margin: auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* ================= BACKGROUND SHAPES ================= */
+
+        .circle {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(2px);
+            opacity: 0.45;
+        }
+
+        .circle-one {
+            width: 180px;
+            height: 180px;
+            background: #d8ccff;
+            top: 30px;
+            left: -70px;
+        }
+
+        .circle-two {
+            width: 220px;
+            height: 220px;
+            background: #ffd6e7;
+            right: -90px;
+            bottom: 40px;
+        }
+
+        .circle-three {
+            width: 100px;
+            height: 100px;
+            background: #ccecff;
+            right: 20%;
+            top: 15px;
+        }
+
+        /* ================= HEADING ================= */
+
+        .section-heading {
+            text-align: center;
+            margin-bottom: 55px;
+        }
+
+        .small-title {
+            display: inline-block;
+            color: #7657df;
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+
+        .section-heading h1 {
+            font-size: 48px;
+            margin-bottom: 12px;
+            color: #25223a;
+        }
+
+        .section-heading h1 span {
+            color: #7657df;
+        }
+
+        .section-heading p {
+            color: #77738b;
+            font-size: 16px;
+        }
+
+        /* ================= SKILLS GRID ================= */
+
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        /* ================= CARD ================= */
+
+        .skill-box {
+            position: relative;
+            background: rgba(255, 255, 255, 0.85);
+            border: 1px solid rgba(118, 87, 223, 0.12);
+            border-radius: 22px;
+            padding: 28px;
+            min-height: 175px;
+
+            box-shadow:
+                0 12px 30px rgba(74, 63, 120, 0.08);
+
+            transition:
+                transform 0.35s ease,
+                box-shadow 0.35s ease;
+
+            overflow: hidden;
+        }
+
+        /* Decorative corner */
+
+        .skill-box::after {
+            content: "";
+            position: absolute;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            right: -30px;
+            top: -30px;
+            background: #eee9ff;
+            transition: 0.4s ease;
+        }
+
+        .skill-box:hover {
+            transform: translateY(-8px);
+            box-shadow:
+                0 20px 40px rgba(74, 63, 120, 0.15);
+        }
+
+        .skill-box:hover::after {
+            transform: scale(1.5);
+        }
+
+        /* ================= ICON ================= */
+
+        .skill-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 14px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            font-size: 22px;
+            margin-bottom: 18px;
+
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Different icon styles */
+
+        .programming .skill-icon {
+            background: #eee9ff;
+        }
+
+        .cs .skill-icon {
+            background: #e5f4ff;
+        }
+
+        .ml .skill-icon {
+            background: #ffe9f2;
+        }
+
+        .web .skill-icon {
+            background: #fff1dc;
+        }
+
+        .database .skill-icon {
+            background: #e5f8ef;
+        }
+
+        .tools .skill-icon {
+            background: #eeeeee;
+        }
+
+        /* ================= TITLES ================= */
+
+        .skill-box h2 {
+            font-size: 18px;
+            margin-bottom: 15px;
+            color: #302c45;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* ================= SKILL TAGS ================= */
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .skill-tags span {
+            padding: 7px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 500;
+            transition: 0.3s ease;
+        }
+
+        .skill-tags span:hover {
+            transform: translateY(-3px) scale(1.03);
+        }
+
+        /* Programming */
+
+        .programming .skill-tags span {
+            background: #f0ebff;
+            color: #684bd1;
+        }
+
+        /* CS */
+
+        .cs .skill-tags span {
+            background: #eaf7ff;
+            color: #347fa8;
+        }
+
+        /* ML */
+
+        .ml .skill-tags span {
+            background: #fff0f5;
+            color: #c54d78;
+        }
+
+        /* Web */
+
+        .web .skill-tags span {
+            background: #fff5e5;
+            color: #b87522;
+        }
+
+        /* Database */
+
+        .database .skill-tags span {
+            background: #eaf8f0;
+            color: #34825c;
+        }
+
+        /* Tools */
+
+        .tools .skill-tags span {
+            background: #f1f1f3;
+            color: #5d5b66;
+        }
+
+        /* ================= FEATURED ML CARD ================= */
+
+        .ml {
+            background: linear-gradient(
+                145deg,
+                #ffffff,
+                #fff5f9
+            );
+        }
+
+        .ml::before {
+            content: "AI";
+            position: absolute;
+            right: 18px;
+            bottom: 8px;
+            font-size: 65px;
+            font-weight: bold;
+            color: rgba(236, 72, 128, 0.05);
+        }
+
+        /* ================= BOTTOM LINE ================= */
+
+        .skill-note {
+            text-align: center;
+            margin-top: 45px;
+            color: #8a869c;
+            font-size: 14px;
+        }
+
+        .skill-note span {
+            color: #7657df;
+            font-weight: bold;
+        }
+
+        /* ================= RESPONSIVE ================= */
+
+        @media (max-width: 800px) {
+
+            .skills-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .section-heading h1 {
+                font-size: 40px;
+            }
+        }
+
+        @media (max-width: 550px) {
+
+            #skills {
+                padding: 60px 15px;
+            }
+
+            .skills-container {
+                grid-template-columns: 1fr;
+            }
+
+            .section-heading h1 {
+                font-size: 34px;
+            }
+
+            .section-heading p {
+                font-size: 14px;
+            }
+
+            .skill-box {
+                min-height: auto;
+            }
+
+            .circle-one {
+                left: -120px;
+            }
+
+            .circle-two {
+                right: -130px;
+            }
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<section id="skills">
+
+    <!-- Background Decorations -->
+
+    <div class="circle circle-one"></div>
+    <div class="circle circle-two"></div>
+    <div class="circle circle-three"></div>
+
+
+    <div class="container">
+
+        <!-- Heading -->
+
+        <div class="section-heading">
+
+            <div class="small-title">
+                What I Know
+            </div>
+
+            <h1>
+                My <span>Skills</span>
+            </h1>
+
+            <p>
+                A collection of technologies and concepts
+                I have developed through my learning and projects.
+            </p>
+
+        </div>
+
+
+        <!-- Skills -->
+
+        <div class="skills-container">
+
+
+            <!-- Programming -->
+
+            <div class="skill-box programming">
+
+                <div class="skill-icon">
+                    💻
+                </div>
+
+                <h2>
+                    Programming
+                </h2>
+
+                <div class="skill-tags">
+
+                    <span>Java</span>
+                    <span>Python</span>
+                    <span>C++</span>
+                    <span>C</span>
+                    <span>C#</span>
+
+                </div>
+
+            </div>
+
+
+            <!-- Computer Science -->
+
+            <div class="skill-box cs">
+
+                <div class="skill-icon">
+                    🧩
+                </div>
+
+                <h2>
+                    Core CS
+                </h2>
+
+                <div class="skill-tags">
+
+                    <span>Data Structures</span>
+                    <span>Algorithms</span>
+
+                </div>
+
+            </div>
+
+
+            <!-- Machine Learning -->
+
+            <div class="skill-box ml">
+
+                <div class="skill-icon">
+                    🤖
+                </div>
+
+                <h2>
+                    Machine Learning
+                </h2>
+
+                <div class="skill-tags">
+
+                    <span>ML Algorithms</span>
+
+                </div>
+
+            </div>
+
+
+            <!-- Web -->
+
+            <div class="skill-box web">
+
+                <div class="skill-icon">
+                    🌐
+                </div>
+
+                <h2>
+                    Web Development
+                </h2>
+
+                <div class="skill-tags">
+
+                    <span>HTML</span>
+
+                </div>
+
+            </div>
+
+
+            <!-- Database -->
+
+            <div class="skill-box database">
+
+                <div class="skill-icon">
+                    🗄️
+                </div>
+
+                <h2>
+                    Database
+                </h2>
+
+                <div class="skill-tags">
+
+                    <span>SQL</span>
+                    <span>Database Management</span>
+
+                </div>
+
+            </div>
+
+
+            <!-- Tools -->
+
+            <div class="skill-box tools">
+
+                <div class="skill-icon">
+                    🛠️
+                </div>
+
+                <h2>
+                    Development Tools
+                </h2>
+
+                <div class="skill-tags">
+
+                    <span>Visual Studio</span>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+        <div class="skill-note">
+            <span>Always learning.</span>
+            Always building. Always improving.
+        </div>
+
+
+    </div>
+
+</section>
+
+
+</body>
+
+</html>
